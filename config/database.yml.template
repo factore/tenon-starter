@@ -1,0 +1,13 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: tenon_starter_development
+  host: localhost
+  post: 5432
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  database: tenon_starter_test
+  host: localhost
+  post: 5432

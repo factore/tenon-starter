@@ -1,0 +1,3 @@
+%ul.main-nav__list
+  - if policy(Tenon::Asset).index?
+    = nav_item 'Asset Library', assets_path, 'photo_library'

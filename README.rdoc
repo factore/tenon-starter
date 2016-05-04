@@ -1,0 +1,12 @@
+Use this project to get a Tenon application bootstrapped quickly.  It provides everything you need to integrate webpack with Rails and serve Tenon's assets.
+
+This project is based on a lot of tutorials by a lot of great people, but probably most closely resembles https://github.com/mikechau/rails-hot-react-webpack-example
+
+To get started, simply run the webpack-dev-server and the rails server, then visit http://localhost:9999/tenon in your browser
+
+    npm run start
+    rails server
+
+When deploying in production run <tt>./build.sh</tt>.  This will run the webpack production build task and then Rails' <tt>assets:precompile</tt> task.
+
+This project stubs some user-related things out in <tt>ApplicationController</tt>.  You'll probably want to install Devise or something similar in your project.
