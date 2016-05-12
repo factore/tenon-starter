@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'tenon', '~>2.0.4'
+gem 'tenon', '~>2.0.6'
 
 # activemodel-serializers-xml is needed for draper to work with Rails 5 for now
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
