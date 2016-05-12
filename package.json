@@ -35,7 +35,7 @@
     "reselect": "^2.5.1",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
-    "tenon": "^2.0.8",
+    "tenon": "^2.0.9",
     "webpack": "^1.13.0"
   },
   "devDependencies": {

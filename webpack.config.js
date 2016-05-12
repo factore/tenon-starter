@@ -28,10 +28,9 @@ module.exports = {
     ]
   },
   sassLoader: {
-    includePaths: [
-      ...require('tenon/stylesheets').includePaths,
-      ...require('bourbon').includePaths
-    ]
+    includePaths: new Array()
+      .concat(require('tenon/stylesheets').includePaths)
+      .concat(require('bourbon').includePaths)
   },
   plugins: [],
   node: {

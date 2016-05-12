@@ -17,4 +17,4 @@ vendor/ruby/*
 /public/assets/*
 
 config/database.yml
-config/initializers/devise.rb
+config/application.yml

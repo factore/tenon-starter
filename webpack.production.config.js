@@ -6,7 +6,7 @@ module.exports = Object.assign({}, config, {
   output: {
     path: path.join(__dirname, 'client', 'build', 'assets'),
     publicPath: '/assets/',
-    filename: '[name]-main.js',
+    filename: '[name].js',
     chunkFilename: '[id].chunk.[hash].js',
     sourceMapFilename: 'debugging/[file].map',
     pathinfo: false
@@ -23,11 +23,16 @@ module.exports = Object.assign({}, config, {
     ])
   },
   plugins: config.plugins.concat([
-    new ExtractTextPlugin('[name]-main.css'),
+    new ExtractTextPlugin('[name].css'),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    })
   ])
 });
