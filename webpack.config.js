@@ -1,6 +1,5 @@
 const path = require('path');
 
-require('coffee-script').register();
 const babelSettings = {
   extends: path.join(__dirname, '/.babelrc')
 }
@@ -11,26 +10,23 @@ module.exports = {
     tenon: './client/tenon'
   },
   resolve: {
-    extensions: ["", ".webpack.js", ".web.js", ".js", ".coffee"]
+    extensions: ["", ".webpack.js", ".web.js", ".js"]
   },
   module: {
     loaders: [
-      { test: /\.coffee$/, loader: 'coffee-loader' },
       {
         test: /\.js$/,
-        // exclude: /node_modules/,
+        exclude: /node_modules/,
         loaders: ['react-hot', 'babel?' + JSON.stringify(babelSettings)],
-        include: [
-          path.join(__dirname, 'client'),
-          path.join(__dirname, 'node_modules/tenon')
-        ]
+        include: [path.join(__dirname, 'client')]
       },
     ]
   },
   sassLoader: {
-    includePaths: new Array()
-      .concat(require('tenon/stylesheets').includePaths)
-      .concat(require('bourbon').includePaths)
+    includePaths: [
+      ...require('tenon-scss').includePaths,
+      ...require('bourbon').includePaths
+    ]
   },
   plugins: [],
   node: {
